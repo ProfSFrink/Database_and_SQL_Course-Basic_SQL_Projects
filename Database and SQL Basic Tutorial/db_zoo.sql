@@ -286,3 +286,11 @@ SELECT
 	INNER JOIN tbl_nutrition a3 ON a3.nutrition_id = a1.species_nutrition
 	WHERE species_name = 'ghost bat'
 ;
+
+--
+-- SQL JOIN Assignment - PART 6 (09/10/2022)
+--
+
+-- Select all recrods from both 'nutrition' and 'species' table with matching nutrition id
+SELECT * FROM tbl_nutrition
+INNER JOIN tbl_species ON tbl_species.species_nutrition = tbl_nutrition.nutrition_id

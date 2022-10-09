@@ -19,14 +19,14 @@ CREATE TABLE tbl_animalia ( -- Create a table called 'tbl_animalla'
 -- DATABASE AND SQL BASIC TUTORIAL - PART 2 (05/10/2022)
 --
 
-INSERT INTO tbl_animalla -- Insert into the table 'tbl_animalla'.
+INSERT INTO tbl_animalia -- Insert into the table 'tbl_animalla'.
 	(animalia_type) -- the column 'animalia_type'.
 	VALUES -- the values below.
 	('vertebrate'),
 	('invertebrate')
 ;
 
-SELECT * FROM tbl_animalla; -- Select all rows from the table 'tbl_animalla'.
+SELECT * FROM tbl_animalia; -- Select all rows from the table 'tbl_animalla'.
 
 CREATE TABLE tbl_class ( -- Create a table called 'tbl_class'
 	class_id INT PRIMARY KEY NOT NULL IDENTITY (100,1), -- Create a row called 'class_id' which is an integer and also our primary key which cannot have a NULL value and will start at 100 and increment from there.
@@ -165,6 +165,7 @@ SELECT * FROM tbl_care; -- Select all rows from table 'tbl_care'.
 --
 -- DATABASE AND SQL BASIC TUTORIAL - PART 5 (08/10/2022)
 --
+
 INSERT INTO tbl_nutrition -- Insert into the table 'tbl_nutrition'.
 	(nutrition_type, nutrition_cost) -- into the columns 'nutrition_type','nutrition_cost'.
 	VALUES -- the values below.
@@ -244,4 +245,44 @@ INSERT INTO tbl_species -- Insert into the table 'tbl_species'.
 	('grey wolf', 1, 102, 1, 5000, 2201, 'care_4')
 ;
 
-SELECT * FROM tbl_species; -- Select all rows from table 'tbl_species'.
+SELECT * FROM tbl_species WHERE species_name = 'chicken'; -- Select all rows from table 'tbl_species'.
+
+--
+-- DATABASE AND SQL BASIC TUTORIAL - PART 6 (09/10/2022)
+--
+
+SELECT
+	-- Create aliases 'a1 through a7' for our tables
+	a1.species_name, a2.animalia_type,
+	a3.class_type, a4.order_type, a5.habitat_type,
+	a6.nutrition_type, a7.care_type
+	-- Select from the species table
+	FROM tbl_species a1
+	-- All results where 'animalia_id' and 'species_animalia' have matching rows in tables 'animalia' and 'species'
+	INNER JOIN tbl_animalia a2 ON a2.animalia_id = a1.species_animalia
+	-- All results where 'class_id' and 'species_class' have matching rows in tables 'class' and 'species'
+	INNER JOIN tbl_class a3 ON a3.class_id = a1.species_class
+	-- All results where 'order_id' and 'species_order' have matching rows in tables 'order' and 'species'
+	INNER JOIN tbl_order a4 ON a4.order_id = a1.species_order
+	-- All results where 'habitat_id' and 'species_habitat' have matching rows in tables 'habitat' and 'species'
+	INNER JOIN tbl_habitat a5 ON a5.habitat_id = a1.species_habitat
+	-- All results where 'nutrition_id' and 'species_nutrition' have matching rows in tables 'nutrition' and 'species'
+	INNER JOIN tbl_nutrition a6 ON a6.nutrition_id = a1.species_nutrition
+	-- All results where 'care_id' and 'species_care' have matching rows in tables 'care' and 'species'
+	INNER JOIN tbl_care a7 ON a7.care_id = a1.species_care
+	-- And the species_name is equal to 'brown bear'
+	WHERE species_name = 'brown bear'
+;
+
+SELECT
+	-- Create aliases for the species, habitat and nutrition tables
+	a1.species_name, a2.habitat_type, a2.habitat_cost,
+	a3.nutrition_type, a3.nutrition_cost
+	-- Select from the species table
+	FROM tbl_species a1
+	-- All results where 'habitat_id' and 'species_habitat' have matching rows in tables 'habitat' and 'species'
+	INNER JOIN tbl_habitat a2 ON a2.habitat_id = a1.species_habitat
+	-- All results where 'habitat_id' and 'species_nutrition' have matching rows in tables 'nutrition' and 'species'
+	INNER JOIN tbl_nutrition a3 ON a3.nutrition_id = a1.species_nutrition
+	WHERE species_name = 'ghost bat'
+;

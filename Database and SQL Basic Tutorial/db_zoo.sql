@@ -294,3 +294,16 @@ SELECT
 -- Select all recrods from both 'nutrition' and 'species' table with matching nutrition id
 SELECT * FROM tbl_nutrition
 INNER JOIN tbl_species ON tbl_species.species_nutrition = tbl_nutrition.nutrition_id
+
+--
+-- DATABASE AND SQL BASIC TUTORIAL - PART 7 (09/10/2022)
+--
+
+-- This will delete all the tables specified NOTE: We must delete tbl_species first as this has all the connections to the other tables
+-- we cannot delete the other tables until we delete it first.
+-- DROP TABLE tbl_species, tbl_animalia, tbl_care, tbl_class, tbl_habitat, tbl_nutrition, tbl_order, tbl_specialist;
+
+-- This is the same as the above statement but it check to see of tbl_species exists first before attempting to delete any tables
+IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES tbl_species)
+	DROP TABLE tbl_species, tbl_animalia, tbl_care, tbl_class, tbl_habitat, tbl_nutrition, tbl_order, tbl_specialist;
+

@@ -209,7 +209,7 @@ INSERT INTO tbl_specialist -- Insert into the table 'tbl_specialist'.
 SELECT * FROM tbl_specialist; -- Select all rows from table 'tbl_specialist'.
 
 CREATE TABLE tbl_species ( -- Create table 'tbl_species'
-	--
+
 	species_id INT PRIMARY KEY NOT NULL IDENTITY (1,1), -- Create a row called 'species_id' which is a integer value but also our primary key which cannot have a NULL value and will start at 1 and increment by 1 from there.
 	species_name VARCHAR(50) NOT NULL, -- Create a row called 'species_name' which is a string with a fixed character length of 50.
 

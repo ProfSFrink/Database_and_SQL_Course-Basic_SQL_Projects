@@ -6,8 +6,8 @@
 -- DATABASE AND SQL BASIC TUTORIAL - PART 9 (11/10/2022)
 --
 
-/* We don't need this code again as we have already created the database
-CREATE DATABASE db_zooTest2 -- Create database 'db_zooTest2' */
+-- We don't need this code again as we have already created the database
+-- CREATE DATABASE db_zooTest2 -- Create database 'db_zooTest2'
 
 CREATE PROCEDURE createZooDB -- Start creating a stored procedure called 'createZooDB'
 AS
@@ -176,7 +176,7 @@ BEGIN -- START PROCEDURE --
 		(species_name, species_animalia, species_class, species_order, species_habitat, species_nutrition, species_care) -- into the columns 'species_name', 'species_animalia', 'species_class','species_order',species_habitat',species_nutrition',species_care'.
 		VALUES -- the values below.
 		('brown bear', 1, 102, 3, 5007, 2200, 'care_1'),
-		('jaguear', 1, 102, 1, 5007, 2200, 'care_4'),
+		('jaguar', 1, 102, 1, 5007, 2200, 'care_4'),
 		('penguin', 1, 100, 1, 5003, 2200, 'care_6'),
 		('ghost bat', 1, 102, 1, 5007, 2204, 'care_2'),
 		('chicken', 1, 100, 3, 5001, 2205, 'care_0'),

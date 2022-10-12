@@ -5,9 +5,9 @@
 --
 -- DATABASE AND SQL BASIC TUTORIAL - PART 9 (11/10/2022)
 --
-USE db_zooTest2
+--USE db_zooTest2
 
-EXECUTE [dbo].[createZooDB] -- Executes the stored procedure 'createZooDB'
+--EXECUTE [dbo].[createZooDB] -- Executes the stored procedure 'createZooDB'
 
 CREATE PROC getANIMAL_INFO -- Creates a stored procedure called 'getANIMAL_INFO'
 
@@ -38,4 +38,6 @@ AS
 		;
 END /* END PROCEDURE */
 
-EXECUTE [dbo].[getANIMAL_INFO] 'brown bear' -- Execute the stored procedure 'getANIMAL_INFO' passing in the parameter 'brown bear'
+EXECUTE [dbo].[getANIMAL_INFO] 'jaguear' -- Execute the stored procedure 'getANIMAL_INFO' passing in the parameter 'brown bear'
+
+

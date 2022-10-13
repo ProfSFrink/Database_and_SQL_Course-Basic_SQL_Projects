@@ -39,18 +39,18 @@ SELECT species_name AS 'Species Name:', species_nutrition AS 'Nutrition Type:' F
 
 SELECT
 	-- We SELECT the First, Last Name and Contact info from 'tbl_specialist' and the Species Name and Care ID from 'tbl_species' along with Care Type from 'tbl_care'
-	a1.specialist_fname AS 'Specialist First Name:', a1.specialist_lname AS 'Specialist Second Name:', a1.specialist_contact AS 'Specialist Contact Info:',
-	a2.species_name AS 'Species Name', a2.species_care AS 'Care ID', a3.care_type AS 'Care Type:'
+	Specialist.specialist_fname AS 'Specialist First Name:', Specialist.specialist_lname AS 'Specialist Second Name:', Specialist.specialist_contact AS 'Specialist Contact Info:',
+	Species.species_name AS 'Species Name', Species.species_care AS 'Care ID', Care.care_type AS 'Care Type:'
 		
-	FROM tbl_specialist a1
+	FROM tbl_specialist AS Specialist
 	
 	-- NOTE: I am performing an extra JOIN so I can use data from three tables in my answer for this assignment
 		
 	-- We first JOIN 'care_specialist' in 'tbl_care' to 'specialist_id' in 'tbl_specialist' so we can retrieve which specialist performs the correct care type (care_6)
-	INNER JOIN tbl_care a3 ON a3.care_specialist = a1.specialist_id
+	INNER JOIN tbl_care AS Care ON Care.care_specialist = Specialist.specialist_id
 
 	-- Then JOIN the 'species_care' in 'tbl_species' to 'care_id' from 'tbl_care'
-	INNER JOIN tbl_species a2 ON a2.species_care = a3.care_id
+	INNER JOIN tbl_species AS Species ON Species.species_care = Care.care_id
 
-	WHERE care_id = 'care_6' -- 'care_6' is for people for care for penguins
+	WHERE species_name = 'penguin' -- We only want data for people who care for penguins
 ;

@@ -24,12 +24,21 @@ SELECT nutrition_type FROM tbl_nutrition WHERE nutrition_cost <= 600.00
 -- Zoo Database Assignment #4 (12/10/2022)
 
 /* SELECT all 'species_names' with the 'nutrition_id' between 2202 and 2206 from the 'tbl_nutrition' table. */
-SELECT species_nutrition, species_name FROM tbl_species WHERE species_nutrition BETWEEN 2202 AND 2206
+SELECT species_name AS 'Species Name', nutrition_id AS 'Nutrition ID' 
+	FROM tbl_species 
+	/* We JOIN the foreign key 'species_nutrition' of 'tbl_species' with the primary key of 'tbl_nutrition' 'nutrition_id'   */
+	INNER JOIN tbl_nutrition ON species_nutrition = nutrition_id
+	WHERE nutrition_id BETWEEN 2202 AND 2206
+	ORDER BY nutrition_id /* And we sort the results by 'nutrition_id' */
 
 -- Zoo Database Assignment #5 (12/10/2022)
 
 /* SELECT all names within the 'species_name' column using the alias "Species Name:" from the 'tbl_species' table and their corresponding 'nutrition_type' under the alias "Nutrition Type:" from the 'tbl_nutrition' table. */
-SELECT species_name AS 'Species Name:', species_nutrition AS 'Nutrition Type:' FROM tbl_species
+SELECT species_name AS 'Species Name:', species_nutrition AS 'Species Nutrition ID', nutrition_type AS 'Nutrition Type:' 
+	FROM tbl_species
+	/* We JOIN the foreign key 'species_nutrition' of 'tbl_species' with the primary key of 'tbl_nutrition' 'nutrition_id'   */
+	INNER JOIN tbl_nutrition ON species_nutrition = nutrition_id
+	ORDER BY species_nutrition /* And we sort the results by 'species_nutrition' */
 
 -- Zoo Database Assignment #6 (12/10/2022)
 

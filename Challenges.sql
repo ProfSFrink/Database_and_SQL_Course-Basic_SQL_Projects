@@ -23,3 +23,15 @@ FROM Person.Address
 
 SELECT TOP 33 *
 FROM Person.Person
+
+-- SQL MIN / MAX CHALLENGE (18/10/22)
+--
+-- The MIN() function returns the smallest value of the selected column. Below we SELECT the row with the MINimum value from the 'ListPrice' column 
+
+SELECT MIN(ListPrice) AS 'Smallest Price'
+FROM Production.Product
+
+-- The MAX() function returns the largest value of the selected column. Below we SELECT the row with the MAXimum value from the 'ListPrice' column
+
+SELECT MAX(ListPrice) AS 'Largest Price'
+FROM Production.Product

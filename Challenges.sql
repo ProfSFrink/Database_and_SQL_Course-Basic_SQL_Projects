@@ -16,3 +16,10 @@ GO
 
 SELECT DISTINCT City
 FROM Person.Address
+
+-- SQL SELECT TOP CHALLENGE (18/10/22)
+--
+-- The SELECT TOP clause is used to specify the number of records to return. Below we display all the TOP 33 rows from the Person.Person Table
+
+SELECT TOP 33 *
+FROM Person.Person

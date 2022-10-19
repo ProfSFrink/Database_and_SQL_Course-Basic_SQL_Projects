@@ -1,6 +1,5 @@
 -- Advanced Software and Web Developer Diploma
 -- Course #7 - Database and SQL
--- Database and SQL Basic Tutorial Video Series
 
 --
 -- STORED PROCEDURE ASSIGNMENT #2 (18/10/22)

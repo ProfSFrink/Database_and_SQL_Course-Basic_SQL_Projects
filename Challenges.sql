@@ -1,6 +1,6 @@
 -- Advanced Software and Web Developer Diploma
 -- Course #7 - Database and SQL
--- Database and SQL Basic Tutorial Video Series
+-- Challenges
 
 --
 -- CHALLENGES (18/10/22)

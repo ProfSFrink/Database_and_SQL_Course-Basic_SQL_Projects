@@ -1,6 +1,5 @@
 -- Advanced Software and Web Developer Diploma
 -- Course #7 - Database and SQL
--- Database and SQL Basic Tutorial Video Series
 
 --
 -- TRY / CATCH ASSIGNMENT (18/10/22)

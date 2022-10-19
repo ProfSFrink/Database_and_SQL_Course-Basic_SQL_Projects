@@ -44,3 +44,12 @@ FROM Production.Product
 SELECT Name
 FROM Sales.Store
 WHERE Name LIKE 'a__%'
+
+-- SQL [] WILDCARD CHALLENGE (19/10/22)
+--
+-- The [] WILDCARD will return any rows that match within the brackets. The below SQL statement will SELECT all rows from the 'City' column where the value starts with either 'a', 'n' ahd 't'
+-- and sort the result by 'City'.
+
+SELECT City
+FROM Person.Address
+WHERE City LIKE '[ant]%' ORDER BY City;

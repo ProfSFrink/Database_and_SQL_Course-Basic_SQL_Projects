@@ -35,3 +35,12 @@ FROM Production.Product
 
 SELECT MAX(ListPrice) AS 'Largest Price'
 FROM Production.Product
+
+-- SQL LIKE CHALLENGE (19/10/22)
+--
+-- The SELECT LIKE operator is used in a WHERE clause to search for a specified pattern in a columnn. The LIKE clause in the SQL statement below will
+-- look for any value in the 'Name' column that begins with the letter 'a' and is at least 2 characters long.
+
+SELECT Name
+FROM Sales.Store
+WHERE Name LIKE 'a__%'

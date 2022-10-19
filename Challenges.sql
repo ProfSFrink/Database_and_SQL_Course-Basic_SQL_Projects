@@ -53,3 +53,13 @@ WHERE Name LIKE 'a__%'
 SELECT City
 FROM Person.Address
 WHERE City LIKE '[ant]%' ORDER BY City;
+
+-- SQL BETWEEN CHALLENGE (19/10/22)
+--
+-- The BETWEEN operator selects values within a given range. The values can be numbers, text, or dates. Below the SQL statement will select all rows from the 'ListPrice' column of the 'Product'
+-- table WHERE 'ListPrice' is BETWEEN 10 and 500.
+
+SELECT ListPrice
+FROM Production.Product
+WHERE ListPrice BETWEEN 10 AND 500
+ORDER BY ListPrice
